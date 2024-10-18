@@ -7,7 +7,7 @@ export default function SingleProduct() {
     console.log(param)
     return (
         <div>
-            <h1>Single Product</h1>
+            <h1>{`Single Product: ${param.id}`}</h1>
         </div>
     )
 }

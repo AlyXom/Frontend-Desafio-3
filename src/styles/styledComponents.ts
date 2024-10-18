@@ -120,7 +120,23 @@ export const CloseModal = styled.button`
     background-color: transparent;
 `
 
-export const Icons = styled(HeaderIcons)<{$width: number, $height: number}>`
+export const SeeMoreButton = styled(CloseModal) `
+    height: 50px;
+    width: 200px;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 600;
+    color: #B88E2F;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:active {
+        transform: scale(0.95);
+    }
+`
+
+export const Icons = styled(HeaderIcons)<{$width?: number, $height?: number}>`
     width: ${({$width}) => $width}px;
     height: ${({$height}) => $height}px;
 `
@@ -159,6 +175,49 @@ export const HorizontalCard = styled.div`
     width: 99%;
     gap: 10px;
 `
+
+export const VerticalCard = styled.div `
+`
+
+export const OverlayContainer = styled.div `
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.4s;
+
+    &:hover {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+`
+
+export const Overlay = styled.div `
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`
+
+export const StampContainer = styled.div<{$color?: string}>`
+    position: relative;
+    background-color: ${({$color}) => $color ? $color: "#E97171"};
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+
+    p {
+        font-size: 14px;
+        color: white;
+    }
+`
+
 export const CategoryCard = styled.div`
     gap: 10px;
     display: flex;

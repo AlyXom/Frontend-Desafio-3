@@ -34,9 +34,8 @@ export default function Modal({content, isOpen, headerText}:ModalProps) {
                 <hr  style={{marginBottom: 10}}/>
                 <Card>
                 {content?.map((item) => {
-                    console.log(item.discount_percent)
                     return (
-                        <div>
+                        <div key={item.id}>
                             <HorizontalCard>
                             <img onClick={() => navigate(`/singleproduct/${item.id}`)} style={{width: 100, height: 100, cursor: "pointer"}} src={`http://${item.image_link}`} alt="" />
                             <div style={{width: "100%"}}>
