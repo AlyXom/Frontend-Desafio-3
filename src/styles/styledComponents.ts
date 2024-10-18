@@ -6,6 +6,17 @@ export const Container = styled.div`
     justify-content: center;
 `
 
+const banner = "http://localhost:3001/assets/banner.png"
+
+export const BannerContainer = styled(Container) `
+    background: url(${banner}) no-repeat;
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+`
+
 export const BoxHeader = styled.div`
     display: flex;
     justify-content: space-between;
@@ -121,6 +132,17 @@ export const Card = styled.div`
         border-radius: 10px;
         background-color: gray;
     }
+`
+
+
+export const PastelCard = styled.div`
+    position: relative;
+    width: 800px;
+    height: 400px;
+    left: 430px;
+    top: 250px;
+    border-radius: 20px;
+    padding: 5px;
 `
 
 export const HorizontalCard = styled.div`
