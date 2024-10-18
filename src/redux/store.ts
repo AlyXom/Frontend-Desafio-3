@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit"
 import heartAndCart from "../redux/slices/heartAndCart.slice"
+import modalstate from "../redux/slices/modalState"
 
 export const store = configureStore({
   reducer: {
-    heartandcart: heartAndCart
+    heartandcart: heartAndCart,
+    modalstate: modalstate
   },
 })
 
