@@ -11,5 +11,6 @@ export interface Product {
     image_link: string,
     other_images_link: string[],
     created_date: string,
-    updated_date: string
+    updated_date: string,
+    quantity?: number
 }

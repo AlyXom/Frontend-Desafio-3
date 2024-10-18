@@ -14,14 +14,19 @@ export const heartAndCart = createSlice({
         addToHeart: (state, action: PayloadAction<Product>) => {
             state.heart?.push(action.payload)
         },
-
         deleteToHeart: (state, action: PayloadAction<number>) => {
-            state.heart?.filter((item) => item.id == action.payload)
+            state.heart = state.heart?.filter((item) => item.id !== action.payload)
+        },
+        addToCart: (state, action: PayloadAction<Product>) => {
+            state.cart?.push(action.payload)
+        },
+        deleteToCart: (state, action: PayloadAction<number>) => {
+            state.cart = state.cart?.filter((item) => item.id !== action.payload)
         },
     }
 })
 
 
-export const { addToHeart, deleteToHeart } = heartAndCart.actions
+export const { addToHeart, deleteToHeart, addToCart, deleteToCart } = heartAndCart.actions
 
 export default heartAndCart.reducer

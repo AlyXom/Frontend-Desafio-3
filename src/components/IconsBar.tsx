@@ -5,7 +5,7 @@ import { RootState } from "../redux/store";
 import Modal from "./Modal";
 import { switchState } from "../redux/slices/modalState";
 
-const svgPath = "http://localhost:3000/icons"
+export const svgPath = "http://localhost:3000/icons"
 
 export default function IconsBar() {
 

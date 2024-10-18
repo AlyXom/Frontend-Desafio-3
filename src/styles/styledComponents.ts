@@ -16,6 +16,10 @@ export const BoxHeader = styled.div`
 export const Text = styled.p`
     font-weight: 500;
     font-size: 16px;
+    cursor: default;
+`
+
+export const NavText = styled(Text)`
     cursor: pointer;
 
     &:hover {
@@ -28,6 +32,10 @@ export const Title = styled.h1`
     font-weight: 700;
     font-size: 34px;
     cursor: pointer;
+`
+export const Price = styled(Text)`
+    color: #3a3a3a;
+    font-size: 20;
 `
 
 export const HeaderIcons = styled.img`
@@ -65,12 +73,13 @@ const hideModal = keyframes`
 export const ModalContainer = styled.div<{$isOpen: boolean, $onClose: boolean}>`
     z-index: 10;
     position: absolute;
-    top: 30%;
+    padding: 5px;
+    top: 25%;
     left: 30%;
     width: 800px;
     height: 400px;
     border: 1px black solid;
-    box-shadow: 2px 2px 5px;
+    box-shadow: 1px 3px 5px;
     background-color: white;
     border-radius: 10px;
     animation: ${({$onClose}) => $onClose == true ? showModal : hideModal} 0.1s linear;
@@ -85,4 +94,38 @@ export const ModalOverlay = styled.div`
     background-color: transparent;
     left: 0%;
     top: 0%;
+`
+
+export const CloseModal = styled.button`
+    border: none;
+    background-color: transparent;
+`
+
+export const Icons = styled(HeaderIcons)<{$width: number, $height: number}>`
+    width: ${({$width}) => $width}px;
+    height: ${({$height}) => $height}px;
+`
+
+export const Card = styled.div`
+    height: 85%;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: lightgrey;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        width: 10px;
+        border-radius: 10px;
+        background-color: gray;
+    }
+`
+
+export const HorizontalCard = styled.div`
+    display: flex;
+    margin: 5px 0px;
+    width: 99%;
+    gap: 10px;
 `
