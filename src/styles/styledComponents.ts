@@ -30,6 +30,12 @@ export const Text = styled.p`
     cursor: default;
 `
 
+export const LargeText = styled(Text) `
+    font-weight: 700;
+    font-size: 32px;
+    color: #333333;
+`
+
 export const NavText = styled(Text)`
     cursor: pointer;
 
@@ -62,21 +68,21 @@ export const HeaderIcons = styled.img`
 const showModal = keyframes`
     0% {
         opacity: 0;
-        transform: scale(0.9);
+        transform: scale(0.9) translate(-50%);
     }
     100% {
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1) translate(-50%);
     }
 `
 
 const hideModal = keyframes`
   0% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) translate(-50%);
   }
   100% {
-    transform: scale(0.9);
+    transform: scale(0.9) translate(-50%);
     opacity: 0;
   }
 `;
@@ -85,13 +91,15 @@ export const ModalContainer = styled.div<{$isOpen: boolean, $onClose: boolean}>`
     z-index: 10;
     position: absolute;
     padding: 5px;
-    top: 25%;
-    left: 30%;
+    top: 200px;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%);
     width: 800px;
     height: 400px;
     border: 1px black solid;
     box-shadow: 1px 3px 5px;
-    background-color: white;
+    background-color: #FFF3E3;
     border-radius: 10px;
     animation: ${({$onClose}) => $onClose == true ? showModal : hideModal} 0.1s linear;
     display: ${({$isOpen}) => $isOpen == true ? "block" : "none"};
@@ -150,4 +158,22 @@ export const HorizontalCard = styled.div`
     margin: 5px 0px;
     width: 99%;
     gap: 10px;
+`
+export const CategoryCard = styled.div`
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 380px;
+    height: 480px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+
+    &:active {
+        transform: scale(1);
+    }
 `
