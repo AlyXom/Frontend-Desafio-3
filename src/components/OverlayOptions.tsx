@@ -1,32 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import { svgPath } from "./IconsBar";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import { addToHeart, deleteToCart, deleteToHeart } from "../redux/slices/heartAndCart.slice";
+import { addToHeart, deleteToHeart } from "../redux/slices/heartAndCart.slice";
 import { Product } from "../types/product";
-import { Icons, Text } from "../styles/styledComponents";
+import { ButtonText, Icons, Text } from "../styles/styledComponents";
+import "../styles/styles.css"
 
-interface product {
-    product: Product
-}
-
-export default function OverlayOptions({product}: product) {
+export default function OverlayOptions({product}: {product: Product}) {
     const dispatch = useDispatch()
     const state = useSelector((state:RootState) => state.heartandcart.heart)
     const exist = state?.find(item => item.id == product.id)
     return (
-        <div style={{display: "flex"}}>
-            <div style={{cursor: "pointer", display: "flex", gap: 10}}>
-                <Icons  src={`${svgPath}/share.svg`}/>
-                <Text style={{color: "white"}}>Share</Text>
+        <div className="flex gap" style={{marginTop: 15}}>
+            <div className="flex alignCenter" style={{cursor: "pointer"}}>
+                <Icons $width={17} $height={17} src={`${svgPath}/share.svg`}/>
+                <ButtonText style={{color: "white", cursor: "pointer"}}>Share</ButtonText>
             </div>
-            <div style={{cursor: "pointer", display: "flex", gap: 10}}>
-                <Icons src={`${svgPath}/compare.svg`}/>
-                <Text style={{color: "white"}}>Compare</Text>
+            <div className="flex alignCenter" style={{cursor: "pointer"}}>
+                <Icons $width={17} $height={17} src={`${svgPath}/compare.svg`}/>
+                <ButtonText style={{color: "white", cursor: "pointer"}}>Compare</ButtonText>
             </div>
-            <div style={{cursor: "pointer", display: "flex", gap: 10}} onClick={() => !exist ? dispatch(addToHeart(product)) : dispatch(deleteToHeart(product.id))}>
-                {exist ? <Icons src={`${svgPath}/white-heart-fill.svg`}/> : <Icons src={`${svgPath}/white-heart.svg`}/>}
-                <Text style={{color: "white"}}>Like</Text>
+            <div className="flex alignCenter" style={{cursor: "pointer"}} onClick={() => !exist ? dispatch(addToHeart(product)) : dispatch(deleteToHeart(product.id))}>
+                {exist ? <Icons $width={18} $height={18} src={`${svgPath}/white-heart-fill.svg`}/> : <Icons $width={18} $height={18} src={`${svgPath}/white-heart.svg`}/>}
+                <ButtonText style={{color: "white", cursor: "pointer"}}>Like</ButtonText>
             </div>
         </div>
     )

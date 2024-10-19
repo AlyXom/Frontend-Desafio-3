@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+const banner = "http://localhost:3001/assets/banner.png"
 
 export const Container = styled.div`
     width: 100%;
@@ -6,7 +7,6 @@ export const Container = styled.div`
     justify-content: center;
 `
 
-const banner = "http://localhost:3001/assets/banner.png"
 
 export const BannerContainer = styled(Container) `
     background: url(${banner}) no-repeat;
@@ -120,6 +120,18 @@ export const CloseModal = styled.button`
     background-color: transparent;
 `
 
+export const ButtonText = styled(CloseModal) `
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:active {
+        transform: scale(0.95);
+    }
+`
+
+
 export const SeeMoreButton = styled(CloseModal) `
     height: 50px;
     width: 200px;
@@ -134,6 +146,12 @@ export const SeeMoreButton = styled(CloseModal) `
     &:active {
         transform: scale(0.95);
     }
+`
+
+export const ShowMoreButton = styled(SeeMoreButton) `
+    border: 1px #B88E2F solid;
+    margin-top: 30px;
+    margin-bottom: 5%;
 `
 
 export const Icons = styled(HeaderIcons)<{$width?: number, $height?: number}>`
@@ -174,9 +192,6 @@ export const HorizontalCard = styled.div`
     margin: 5px 0px;
     width: 99%;
     gap: 10px;
-`
-
-export const VerticalCard = styled.div `
 `
 
 export const OverlayContainer = styled.div `
