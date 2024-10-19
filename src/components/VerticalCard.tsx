@@ -32,7 +32,6 @@ export default function VerticalCard({item}: {item: Product}) {
                 </div>
                 
             </div>
-
         </div>
     )
 }
