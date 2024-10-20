@@ -36,7 +36,7 @@ export default function MainContent() {
     return (
         <Container>
             <Container style={{width: "90%", marginTop: "5%", flexDirection: "column", alignItems: "center"}}>
-                <LargeText>Browse The Range</LargeText>
+                <LargeText>Browse The Ranges</LargeText>
                 <BrowseTheRange categories={categories}/>
                 <LargeText style={{marginBottom: "5%"}}>Our Products</LargeText>
                 <OurProducts products={productDiscount}/>

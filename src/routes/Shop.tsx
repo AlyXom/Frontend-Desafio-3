@@ -3,9 +3,7 @@ import Header from "../components/Header";
 import { useLocation } from "react-router-dom";
 import { myApi } from "../axios.config";
 import { Product } from "../types/product";
-import { Container, Text } from "../styles/styledComponents";
-import Stamp from "../components/Stamp";
-import OverlayCard from "../components/OverlayCard";
+import { Container} from "../styles/styledComponents";
 import VerticalCard from "../components/VerticalCard";
 
 export default function Shop() {
@@ -13,7 +11,6 @@ export default function Shop() {
     const queryParams = new URLSearchParams(location.search)
     const paramCategory = queryParams.get("category")
     const [products, setProducts] = useState<Product[]>([])
-    console.log(paramCategory)
 
     useEffect(() =>{
         async function getProducts() {
@@ -38,7 +35,7 @@ export default function Shop() {
         }
 
         getProducts()
-    }, [])
+    }, [paramCategory])
 
     console.log(products)
     return (

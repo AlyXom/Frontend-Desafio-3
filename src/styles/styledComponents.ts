@@ -30,6 +30,12 @@ export const Text = styled.p`
     cursor: default;
 `
 
+export const ValidationText = styled(Text)<{$color: boolean | undefined}>`
+    font-size: small;
+    color: ${({$color}) => $color ? "green" : "red"};
+    cursor: default;
+`
+
 export const LargeText = styled(Text) `
     font-weight: 700;
     font-size: 32px;
@@ -101,15 +107,15 @@ export const ModalContainer = styled.div<{$isOpen: boolean, $onClose: boolean}>`
     box-shadow: 1px 3px 5px;
     background-color: #FFF3E3;
     border-radius: 10px;
-    animation: ${({$onClose}) => $onClose == true ? showModal : hideModal} 0.1s linear;
-    display: ${({$isOpen}) => $isOpen == true ? "block" : "none"};
+    animation: ${({$onClose}) => $onClose === true ? showModal : hideModal} 0.1s linear;
+    display: ${({$isOpen}) => $isOpen === true ? "block" : "none"};
 `
 
 export const ModalOverlay = styled.div`
     z-index: 1;
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: transparent;
     left: 0%;
     top: 0%;
@@ -118,13 +124,25 @@ export const ModalOverlay = styled.div`
 export const CloseModal = styled.button`
     border: none;
     background-color: transparent;
+    transition: 0.3s;
+    cursor: pointer;
+`
+
+export const NewsletterButton = styled(CloseModal)`
+    font-size: 14px;
+    font-weight: 600;
+    padding-bottom: 2px;
+    border-bottom: 1px solid black;
+    margin-left: 5px;
+
+    &:active {
+        transform: scale(0.95);
+    }
 `
 
 export const ButtonText = styled(CloseModal) `
     font-weight: 500;
     font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
 
     &:active {
         transform: scale(0.95);
@@ -140,8 +158,6 @@ export const SeeMoreButton = styled(CloseModal) `
     font-weight: 600;
     color: #B88E2F;
     border-radius: 3px;
-    cursor: pointer;
-    transition: 0.3s;
 
     &:active {
         transform: scale(0.95);
@@ -250,4 +266,11 @@ export const CategoryCard = styled.div`
     &:active {
         transform: scale(1);
     }
+`
+
+export const NewsletterInput = styled.input<{$valid?: boolean}>`
+    width: 200px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid ${({$valid}) => $valid === true ? "green" : $valid === false ? "red" : undefined};
 `

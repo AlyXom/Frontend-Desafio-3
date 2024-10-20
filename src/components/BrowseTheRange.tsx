@@ -8,7 +8,7 @@ export default function BrowseTheRange({categories}: {categories:Category[]}) {
 
     const navigate = useNavigate()
     return (
-        <Container style={{marginTop: "5%", gap: 20, marginBottom: "5%"}}>
+        <Container style={{marginTop: "5%", gap: 50, marginBottom: "5%"}}>
             {categories.filter((item) => item.id > 3).map((item) => {
                 return (
                     <CategoryCard onClick={() => navigate(`shop/?category=${item.id}`)} key={item.id}>

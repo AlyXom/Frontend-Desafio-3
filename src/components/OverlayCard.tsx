@@ -13,7 +13,7 @@ export default function OverlayCard({product}: product) {
     return (
         <OverlayContainer>
             <Overlay>
-                <SeeMoreButton onClick={() => navigate(`singleproduct/${product.id}`)}>See More</SeeMoreButton>
+                <SeeMoreButton onClick={() => navigate(`/singleproduct/${product.id}`)}>See More</SeeMoreButton>
                 <OverlayOptions product={product}/>
             </Overlay>
         </OverlayContainer>
