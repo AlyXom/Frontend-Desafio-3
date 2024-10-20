@@ -89,3 +89,7 @@
 .mTop-50p {
     margin-top: 50px;
 }
+
+.pointer {
+    cursor: pointer;
+}

@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-const banner = "http://localhost:3001/assets/banner.png"
+
 
 export const Container = styled.div`
     width: 100%;
@@ -8,13 +8,20 @@ export const Container = styled.div`
 `
 
 
-export const BannerContainer = styled(Container) `
-    background: url(${banner}) no-repeat;
+export const BannerContainer = styled(Container)<{$imageUrl: string}>`
+    background: url(${({$imageUrl}) => $imageUrl}) no-repeat;
     width: 100%;
     height: 600px;
     background-size: cover;
     background-position: center;
     overflow: hidden;
+`
+
+export const BannerShopContainer = styled(Container)`
+    padding-top: 70px;
+    height: 350px;
+    position: relative;
+    align-items: center;
 `
 
 export const BoxHeader = styled.div`
