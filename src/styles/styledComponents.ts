@@ -72,6 +72,7 @@ export const HeaderIcons = styled.img`
     width: 22px;
     height: 22px;
     cursor: pointer;
+    transition: 0.2s;
 
     &:active {
         transform: scale(0.9);
@@ -275,9 +276,37 @@ export const CategoryCard = styled.div`
     }
 `
 
-export const NewsletterInput = styled.input<{$valid?: boolean}>`
+export const Input = styled.input`
+    border: none;
+    outline: none;
+`
+
+export const NewsletterInput = styled(Input)<{$valid?: boolean}>`
     width: 200px;
     border: none;
     outline: none;
     border-bottom: 2px solid ${({$valid}) => $valid === true ? "green" : $valid === false ? "red" : undefined};
+`
+
+export const SortDropdown = styled.select `
+    border: none;
+    outline: none;
+    width: 100px;
+    height: 30px;
+    color: #9F9F9F;
+    text-align: center;
+
+    option {
+        color: black;
+    }
+`
+
+export const FilterModal = styled.div`
+    position: absolute;
+    width: 194px;
+    height: 200px;
+    overflow: hidden;
+    background-color: #F9F1E7;
+    transition: all 0.3s;
+    box-shadow: 0px 2px 2px;
 `

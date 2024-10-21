@@ -42,6 +42,10 @@
     display: flex;
 }
 
+.gap-5p {
+    gap: 5px;
+}
+
 .gap {
     gap: 10px;
 }
