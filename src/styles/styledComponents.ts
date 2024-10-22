@@ -178,6 +178,27 @@ export const ShowMoreButton = styled(SeeMoreButton) `
     margin-bottom: 5%;
 `
 
+export const PageButton = styled(CloseModal)`
+    background-color: #F9F1E7;
+    width: 90px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 300;
+    transition: 0.2s;
+
+    &:active {
+        background-color: #B88E2F;
+    }
+`
+
+export const SelectedPage = styled(PageButton)<{$actual: number, $clicked: number}>`
+    width: 60px;
+    font-size: 16px;
+    background-color: ${({$actual, $clicked}) => $actual == $clicked ? "#B88E2F" : "#F9F1E7"};
+    color: ${({$actual, $clicked}) => $actual == $clicked ? "white" : "black"};
+`
+
 export const Icons = styled(HeaderIcons)<{$width?: number, $height?: number}>`
     width: ${({$width}) => $width}px;
     height: ${({$height}) => $height}px;

@@ -29,7 +29,7 @@ export default function ProductsList() {
     }, [state])
     dispatch(showing(products.length))
     return (
-        <div className="flex justifyCenter" style={{width: "100%", marginTop: "3%", marginBottom: "5%"}}>
+        <div className="flex justifyCenter" style={{width: "100%", marginTop: "3%", marginBottom: "3%"}}>
             <Container className="wrap" style={{width: "80%", gap: 30}}>
             {products.map((item) => {
                 return (

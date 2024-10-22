@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import "../styles/styles.css"
+import { PageButton, SelectedPage } from "../styles/styledComponents"
 
 let totalPages = 3
 
@@ -29,16 +30,16 @@ export default function Pagination() {
 
     console.log(actualPage)
     return (
-        <div className="flex gap justifyCenter">
-            <button onClick={() => prevPage()}>Prev</button>
+        <div className="flex gap justifyCenter" style={{marginBottom: 80}}>
+            <PageButton onClick={() => prevPage()}>Prev</PageButton>
             {pages.map((item: number) => {
                 return (
-                    <div style={{backgroundColor: actualPage == item ? "red" : "blue", width: 100, height: 100}}>
-                        <p onClick={() => setActualPage(item)}>{item}</p>
+                    <div>
+                        <SelectedPage $actual={actualPage} $clicked={item} onClick={() => setActualPage(item)}>{item}</SelectedPage>
                     </div>
                 )
             })}
-            <button onClick={() => nextPage()}>Next</button>
+            <PageButton onClick={() => nextPage()}>Next</PageButton>
         </div>
     )
 }
