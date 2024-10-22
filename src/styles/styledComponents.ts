@@ -301,12 +301,14 @@ export const SortDropdown = styled.select `
     }
 `
 
-export const FilterModal = styled.div`
+export const FilterDropdown = styled.div<{$drop: boolean}>`
     position: absolute;
     width: 194px;
-    height: 200px;
+    margin-top: 10px;
+    height: ${({$drop}) => $drop ? "280px" : "0px"};
     overflow: hidden;
     background-color: #F9F1E7;
     transition: all 0.3s;
     box-shadow: 0px 2px 2px;
+    z-index: 10;
 `

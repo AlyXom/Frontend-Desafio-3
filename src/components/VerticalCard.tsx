@@ -7,7 +7,7 @@ import "../styles/styles.css"
 
 export default function VerticalCard({item}: {item: Product}) {
     return (
-        <div className="flex flexDColumn alignCenter" style={{position: "relative"}}>
+        <div className="flex flexDColumn alignCenter" style={{position: "relative", marginBottom: 10}}>
 
             <div className="flex gap" style={{position: "absolute", right: 10, top: 10}}>
                 {item.is_new ? <Stamp isNew={item.is_new} color="#2EC1AC"/> : undefined}

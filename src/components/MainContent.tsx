@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { Product } from "../types/product";
 import BrowseTheRange from "./BrowseTheRange";
 import OurProducts from "./OurProducts";
+import { useDispatch } from "react-redux";
+import { Filtered } from "../types/filteredProduct";
+import { updateSearch } from "../redux/slices/filterSlice";
 
 
 export default function MainContent() {
@@ -13,6 +16,13 @@ export default function MainContent() {
     const [categories, setCategories] = useState<Category[]>([])
     const [productDiscount, setProductDiscount] = useState<Product[]>([])
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const reset: Filtered = {
+        is_new: undefined,
+        category: undefined,
+        limit: 16,
+        order: undefined
+    }
 
     useEffect(() => {
         async function getCategories() {
@@ -40,7 +50,10 @@ export default function MainContent() {
                 <BrowseTheRange categories={categories}/>
                 <LargeText style={{marginBottom: "5%"}}>Our Products</LargeText>
                 <OurProducts products={productDiscount}/>
-                <ShowMoreButton onClick={() => navigate("shop/")}>Show More</ShowMoreButton>
+                <ShowMoreButton onClick={() => {
+                    navigate("shop/")
+                    dispatch(updateSearch(reset))
+                }}>Show More</ShowMoreButton>
             </Container>
         </Container>
     )
