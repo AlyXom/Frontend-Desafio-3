@@ -44,14 +44,14 @@ export default function FilterCategory() {
                         <div>
                             <Text>Conditions:</Text>
                             <div>
-                                <div className="flex">
+                                <div className="flex gap">
                                     <p>New</p>
                                     <input type="checkbox" checked={isCheck.is_new} onChange={() => {
                                         setIsCheck({...isCheck, is_new: !isCheck.is_new})
                                         dispatch(updateSearch({...state, is_new: !state.is_new}))
                                     }}/>
                                 </div>
-                                <div className="flex">
+                                <div className="flex gap">
                                     <p>Discount: </p>
                                     <Input style={{width: 30, textAlign: "center"}} placeholder="10" type="number"/>
                                 </div>
@@ -59,7 +59,7 @@ export default function FilterCategory() {
                             <Text>Categories:</Text>
                             {categories.map((item) => {
                                 return (
-                                    <div className="flex wrap" style={{backgroundColor: "red"}}>
+                                    <div className="flex wrap gap">
                                         <p>{item.name}</p>
                                         <input checked={isCheck.category == item.id} type="checkbox" onChange={() => {
                                             if(isCheck.category == state.category) {
