@@ -1,8 +1,9 @@
 import React, { SyntheticEvent, useEffect, useState } from "react";
 import { Container, NavText, NewsletterButton, NewsletterInput, Text, ValidationText } from "../styles/styledComponents";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function UtilityLinks() {
+    const location = useLocation()
     const navigate = useNavigate()
     const [input, setInput] = useState("")
     const [isValid, setIsValid] = useState<boolean | undefined>(undefined)
@@ -32,8 +33,16 @@ export default function UtilityLinks() {
             <div>
                 <Text style={{color: "#9F9F9F"}}>Links</Text>
                 <div className="mTop-50p">
-                    <NavText onClick={() => window.scrollTo({top: 0, behavior: "smooth"})} className="mTop-50p">Home</NavText>
-                    <NavText onClick={() => navigate("/shop")} className="mTop-50p">Shop</NavText>
+                    <NavText onClick={() => {
+                        if(location.pathname == "/shop" || location.pathname == "/singleproduct") {
+                            navigate("/")
+                            window.scrollTo({top: 0, behavior: "smooth"})
+                        }
+                    }} className="mTop-50p">Home</NavText>
+                    <NavText onClick={() => {
+                        navigate("/shop")
+                        window.scrollTo({top: 0, behavior: "smooth"})
+                    }} className="mTop-50p">Shop</NavText>
                     <NavText className="mTop-50p">About</NavText>
                     <NavText className="mTop-50p">Contact</NavText>
                 </div>
