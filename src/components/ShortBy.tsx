@@ -30,9 +30,9 @@ export default function SortBy() {
                     <div className="flex alignCenter" style={{marginLeft: 30}}>
                         <Text style={{marginRight: 5}}>SortBy</Text>
                         <SortDropdown onChange={(e) => dispatch(updateSearch({...state, order: e.target.value}))}>
-                            <option value="default">Default</option>
-                            <option value="asc">A-Z</option>
-                            <option value="desc">Z-A</option>
+                            <option value="ASC">Default</option>
+                            <option value="ASC">A-Z</option>
+                            <option value="DESC">Z-A</option>
                         </SortDropdown>
                     </div>
                 </div>
