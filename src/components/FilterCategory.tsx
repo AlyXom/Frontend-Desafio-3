@@ -9,11 +9,13 @@ import { myApi } from "../axios.config";
 import { Category } from "../types/category";
 
 export default function FilterCategory() {
-    const [isCheck, setIsCheck] = useState<{is_new?: boolean, discount?: number, category?: number}>({is_new: false, category: 0})
+
+    const state = useSelector((state: RootState) => state.filterSlice)
+
+    const [isCheck, setIsCheck] = useState<{is_new?: boolean, discount?: number, category?: number}>({is_new: false, category: state.category})
     const [categories, setCategories] = useState<Category[]>([])
     const [drop, setDrop] = useState(false)
 
-    const state = useSelector((state: RootState) => state.filterSlice)
     const dispatch = useDispatch()
 
     useEffect(() => {
