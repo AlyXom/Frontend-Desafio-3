@@ -6,15 +6,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { showing, totalPageIs, updateSearch } from "../redux/slices/filterSlice";
 import { Filtered } from "../types/filteredProduct";
+import { useLocation, useParams } from "react-router-dom";
 
 export default function ProductsList() {
-    const state = useSelector((state: RootState) => state.filterSlice)
-    const dispatch = useDispatch()
+
     const [data, setData] = useState<Filtered>({})
     const { products = [] } = data
+
+    const state = useSelector((state: RootState) => state.filterSlice)
+    const dispatch = useDispatch()
+
+
     useEffect(() => {
         async function getData() {
-            const response = await myApi.get("products/", {
+            const response = await myApi.get(`products/`, {
                 params: {
                     is_new: state.is_new,
                     limit: state.limit,
@@ -30,6 +35,7 @@ export default function ProductsList() {
         getData()
     }, [state])
 
+    console.log(state.category)
 
     dispatch(showing(products.length))
     if(data.totalPages) {
