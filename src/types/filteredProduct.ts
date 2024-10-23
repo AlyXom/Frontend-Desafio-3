@@ -9,7 +9,7 @@ export interface Filtered {
     limit?: number,
     total?: number,
     currentPage?: number,
-    totalPage?: number,
+    totalPages?: number,
     categories?: Category[]
     products?: Product[] 
     showing?: number

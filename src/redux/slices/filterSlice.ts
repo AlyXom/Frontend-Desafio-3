@@ -18,11 +18,16 @@ export const filterSlice = createSlice({
         showing: (state, action: PayloadAction<number>) => {
             state.showing = action.payload
             return state
+        },
+
+        totalPageIs: (state, action: PayloadAction<number>) => {
+            state.totalPages = action.payload
+            return state
         }
     }
 })
 
 
-export const { updateSearch, showing } = filterSlice.actions
+export const { updateSearch, showing, totalPageIs } = filterSlice.actions
 
 export default filterSlice.reducer
