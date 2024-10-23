@@ -1,13 +1,13 @@
 import React from "react";
-import { useParams } from "react-router-dom"
+import Header from "../components/Header";
+import MainContentSingleProduct from "../components/MainContentSingleProduct";
 
 export default function SingleProduct() {
-    const param = useParams()
-
-    console.log(param)
     return (
         <div>
-            <h1>{`Single Product: ${param.id}`}</h1>
+            <Header />
+            <div style={{paddingTop: 67}}></div>
+            <MainContentSingleProduct />
         </div>
     )
 }

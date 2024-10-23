@@ -34,7 +34,7 @@ export default function UtilityLinks() {
                 <Text style={{color: "#9F9F9F"}}>Links</Text>
                 <div className="mTop-50p">
                     <NavText onClick={() => {
-                        if(location.pathname == "/shop" || location.pathname == "/singleproduct") {
+                        if(location.pathname == "/shop/" || location.pathname == "/singleproduct") {
                             navigate("/")
                             window.scrollTo({top: 0, behavior: "smooth"})
                         }
