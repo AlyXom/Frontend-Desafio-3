@@ -4,7 +4,7 @@ import VerticalCard from "./VerticalCard";
 import { Container } from "../styles/styledComponents";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import { showing } from "../redux/slices/filterSlice";
+import { showing, totalPageIs, updateSearch } from "../redux/slices/filterSlice";
 import { Filtered } from "../types/filteredProduct";
 
 export default function ProductsList() {
@@ -20,7 +20,8 @@ export default function ProductsList() {
                     limit: state.limit,
                     category: state.category,
                     discount: state.discount,
-                    order: state.order
+                    order: state.order,
+                    page: state.currentPage
                 }
             })
             setData(response.data)
@@ -28,7 +29,14 @@ export default function ProductsList() {
 
         getData()
     }, [state])
+
+
     dispatch(showing(products.length))
+    if(data.totalPages) {
+        dispatch(totalPageIs(data.totalPages))
+    }
+
+    console.log(products)
     return (
         <div className="flex justifyCenter" style={{width: "100%", marginTop: "3%", marginBottom: "3%"}}>
             <Container className="wrap" style={{width: "80%", gap: 30}}>
