@@ -6,7 +6,7 @@ import { Product } from "../types/product";
 
 export default function ProductNavigation({product}: {product: Product}) {
     return (
-        <Container className="alignCenter" style={{backgroundColor: "#F9F1E7", height:70}}>
+        <Container className="alignCenter" style={{backgroundColor: "#F9F1E7", height:70, marginBottom: 20}}>
             <div className="flex w-90 gap alignCenter">
                 <Text style={{color: "#9F9F9F"}}>Home</Text>
                 <Icons $width={13} $height={13} src={`${svgPath}/arrow.svg`}/>

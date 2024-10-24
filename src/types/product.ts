@@ -9,7 +9,7 @@ export interface Product {
     discount_percent: number,
     is_new: boolean,
     image_link: string,
-    other_images_link: string[],
+    other_images_link: string,
     created_date: string,
     updated_date: string,
     quantity?: number
