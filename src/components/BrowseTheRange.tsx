@@ -20,7 +20,7 @@ export default function BrowseTheRange({categories}: {categories:Category[]}) {
                         dispatch(updateSearch({...state, category: item.id}))
                     }} key={item.id}>
                         <div className="w-100 h-100">
-                            <img style={{borderRadius: 10}} src={`${item.image_link}`} alt="" />
+                            <img style={{borderRadius: 10}} src={`http://${item.image_link}`} alt="" />
                         </div>
                         <Text style={{fontSize: 20}}>{item.name}</Text>
                     </CategoryCard>

@@ -333,3 +333,16 @@ export const FilterDropdown = styled.div<{$drop: boolean}>`
     box-shadow: 0px 2px 2px;
     z-index: 10;
 `
+export const ProductImage = styled.img `
+    background-color: #F9F1E7;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+`
+
+export const ProductThumb = styled(ProductImage)<{$selected?: number, $index?: number}>`
+    width: 80px;
+    height: 80px;
+    border: ${({$selected, $index}) => $selected == $index ? "1px solid black" : undefined};
+    cursor: pointer;
+` 

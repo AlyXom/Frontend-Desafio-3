@@ -16,7 +16,7 @@ export default function VerticalCard({item}: {item: Product}) {
 
             <OverlayCard product={item}/>
 
-            <div className="w-100" style={{height: 300, width: 280}}>
+            <div className="w-100" style={{height: 300, width: 290}}>
                 <img className="w-100 h-100" src={`${item.image_link}`} alt="" />
             </div>
 
