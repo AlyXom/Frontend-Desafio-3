@@ -37,7 +37,7 @@ export default function Modal({content, isOpen, headerText}:ModalProps) {
                     return (
                         <div key={item.id}>
                             <HorizontalCard>
-                            <img onClick={() => navigate(`/singleproduct/${item.id}`)} style={{width: 100, height: 100, cursor: "pointer"}} src={`http://${item.image_link}`} alt="" />
+                            <img onClick={() => navigate(`/singleproduct/${item.id}`)} style={{width: 100, height: 100, cursor: "pointer"}} src={`${item.image_link}`} alt="" />
                             <div style={{width: "100%"}}>
                                 <Text onClick={() => navigate(`/singleproduct/${item.id}`)} style={{cursor: "pointer"}}>{item.name}</Text>
                                 {state.heart == true ? <Text style={{fontSize: 14, marginBottom: 20}}>{item.description}</Text> : <div style={{marginBottom: 20}}></div>}
