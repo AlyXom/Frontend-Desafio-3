@@ -136,6 +136,13 @@ export const CloseModal = styled.button`
     cursor: pointer;
 `
 
+export const SizeButton = styled(CloseModal)<{$selected: number, $index: number}>`
+    width: 35px;
+    height: 35px;
+    background-color: #F9F1E7;
+    border-radius: 5px;
+`
+
 export const NewsletterButton = styled(CloseModal)`
     font-size: 14px;
     font-weight: 600;

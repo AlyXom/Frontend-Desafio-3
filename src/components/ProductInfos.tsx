@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, ProductImage, ProductThumb, Text } from "../styles/styledComponents";
+import { Container, ProductImage, ProductThumb, SizeButton, Text } from "../styles/styledComponents";
 import { Product } from "../types/product";
 import "../styles/styles.css"
 import { svgPath } from "./IconsBar";
@@ -26,6 +26,7 @@ function Stars() {
 export default function ProductInfos({product, smallImg = []}: {product: Product, smallImg: string[]}) {
     
     const [selected, setSelected] = useState<number>(0)
+    const [sizeIndex, setSizeIndex] = useState<number>(0)
     const [reviews, setReviews] = useState(() => Math.floor((Math.random() * 10) + 1))
     return (
         <Container>
@@ -47,6 +48,11 @@ export default function ProductInfos({product, smallImg = []}: {product: Product
                     </div>
                     <div style={{width: "50%", marginTop: 10}}>
                         <Text>{product.large_description}</Text>
+                    </div>
+                    <div style={{marginTop: 20}}>
+                        <p style={{color: "#9F9F9F"}}>Size</p>
+                        <span className="flex gap">
+                        </span>
                     </div>
                 </div>
             </Container>

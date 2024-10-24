@@ -12,5 +12,8 @@ export interface Product {
     other_images_link: string,
     created_date: string,
     updated_date: string,
-    quantity?: number
+    quantity?: number,
+    color?: string,
+    size: string
+
 }
