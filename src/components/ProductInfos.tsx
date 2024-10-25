@@ -9,6 +9,7 @@ import SizeContainer from "./SizeContainer";
 import ColorContainer from "./ColorContainer";
 import { svgPath } from "./IconsBar";
 import AddToCart from "./AddToCart";
+import Tags from "./Tags";
 
 export default function ProductInfos({product, smallImg = []}: {product: Product, smallImg: string[]}) {
     
@@ -31,6 +32,7 @@ export default function ProductInfos({product, smallImg = []}: {product: Product
                     <ColorContainer />
                     <AddToCart />
                     <hr style={{marginTop: 50}}/>
+                    <Tags product={product}/>
                 </div>
             </Container>
         </Container>
