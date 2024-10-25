@@ -136,6 +136,11 @@ export const CloseModal = styled.button`
     cursor: pointer;
 `
 
+export const DescriptionTitle = styled(CloseModal)<{$selected: boolean}>`
+    font-size: 24px;
+    color: ${({$selected}) => $selected ? "black" : "#9F9F9F"};
+`
+
 export const SizeButton = styled(CloseModal)<{$selected: number | undefined, $index: number}>`
     width: 35px;
     height: 35px;
@@ -383,7 +388,7 @@ export const ProductImage = styled.img `
 export const ProductThumb = styled(ProductImage)<{$selected?: number, $index?: number}>`
     width: 80px;
     height: 80px;
-    border: ${({$selected, $index}) => $selected == $index ? "1px solid black" : undefined};
-    transition: 0.3s;
+    box-shadow: ${({$selected, $index}) => $selected == $index ? "0px 0px 2px" : undefined};
+    transition: 0.7s;
     cursor: pointer;
 ` 

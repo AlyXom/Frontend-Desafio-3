@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { myApi } from "../axios.config";
 import { Product } from "../types/product";
 import ProductInfos from "./ProductInfos";
+import Description from "./Description";
 
 export default function MainContentSingleProduct() {
     const { id } = useParams()
@@ -33,6 +34,8 @@ export default function MainContentSingleProduct() {
                 <div>
                     <ProductNavigation product={data}/>
                     <ProductInfos product={data} smallImg={smallImg}/>
+                    <hr style={{marginTop: 60}}/>
+                    <Description product={data}/>
                 </div>
             )}
             
