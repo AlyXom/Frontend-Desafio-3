@@ -136,11 +136,18 @@ export const CloseModal = styled.button`
     cursor: pointer;
 `
 
-export const SizeButton = styled(CloseModal)<{$selected: number, $index: number}>`
+export const SizeButton = styled(CloseModal)<{$selected: number | undefined, $index: number}>`
     width: 35px;
     height: 35px;
-    background-color: #F9F1E7;
+    background-color: ${({$selected, $index}) => $selected == $index ? "#B88E2F" : "#F9F1E7"};
+    color: ${({$selected, $index}) => $selected == $index ? "white" : "black"};
     border-radius: 5px;
+`
+
+export const ColorButton = styled(SizeButton)<{$color: string}>`
+    background-color: ${({$color}) => $color};
+    border-radius: 50px;
+    border: ${({$selected, $index}) => $selected == $index ? "3px solid #555" : undefined};
 `
 
 export const NewsletterButton = styled(CloseModal)`
