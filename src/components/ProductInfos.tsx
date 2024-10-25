@@ -1,18 +1,17 @@
 import React, { useState } from "react";
-import { Container, ProductImage, ProductThumb, SizeButton, Text } from "../styles/styledComponents";
+import { AddToCartButton, AddToCartDiv, Container, Count, Icons, Text } from "../styles/styledComponents";
 import { Product } from "../types/product";
 import "../styles/styles.css"
-import { svgPath } from "./IconsBar";
 import Stars from "./Stars";
 import ProductImageContainer from "./ProductImageContainer";
 import ProductPriceInfo from "./ProductPriceInfo";
 import SizeContainer from "./SizeContainer";
 import ColorContainer from "./ColorContainer";
+import { svgPath } from "./IconsBar";
+import AddToCart from "./AddToCart";
 
 export default function ProductInfos({product, smallImg = []}: {product: Product, smallImg: string[]}) {
     
-    
-    const [sizeIndex, setSizeIndex] = useState<number>(0)
     const [reviews, setReviews] = useState(() => Math.floor((Math.random() * 10) + 1))
     return (
         <Container>
@@ -30,6 +29,8 @@ export default function ProductInfos({product, smallImg = []}: {product: Product
                     </div>
                     <SizeContainer />
                     <ColorContainer />
+                    <AddToCart />
+                    <hr style={{marginTop: 50}}/>
                 </div>
             </Container>
         </Container>

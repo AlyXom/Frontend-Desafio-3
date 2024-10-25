@@ -150,6 +150,32 @@ export const ColorButton = styled(SizeButton)<{$color: string}>`
     border: ${({$selected, $index}) => $selected == $index ? "3px solid #555" : undefined};
 `
 
+export const AddToCartDiv = styled.div<{$width?: number, $color?: string}>`
+    display: flex;
+    width: ${({$width}) => $width}px;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: ${({$color}) => `1px solid ${$color}`};
+`
+
+export const Count = styled(CloseModal) `
+    font-size: 20px;
+
+    &:active {
+        transform: scale(0.6);
+    }
+`
+
+export const AddToCartButton = styled(AddToCartDiv) `
+    cursor: pointer;
+    transition: 0.3s;
+    &:active {
+        transform: scale(0.95);
+    }
+`
+
 export const NewsletterButton = styled(CloseModal)`
     font-size: 14px;
     font-weight: 600;
@@ -358,5 +384,6 @@ export const ProductThumb = styled(ProductImage)<{$selected?: number, $index?: n
     width: 80px;
     height: 80px;
     border: ${({$selected, $index}) => $selected == $index ? "1px solid black" : undefined};
+    transition: 0.3s;
     cursor: pointer;
 ` 
