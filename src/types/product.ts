@@ -1,6 +1,7 @@
 export interface Product {
     id: number,
     name: string,
+    sku: string,
     category_id: number,
     description: string,
     large_description: string,
@@ -12,5 +13,8 @@ export interface Product {
     other_images_link: string,
     created_date: string,
     updated_date: string,
-    quantity?: number
+    quantity?: number,
+    color?: string,
+    size: string
+
 }

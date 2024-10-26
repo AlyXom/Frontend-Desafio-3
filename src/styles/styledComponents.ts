@@ -7,6 +7,13 @@ export const Container = styled.div`
     justify-content: center;
 `
 
+export const ExpandedContainer = styled(Container)<{$expand: number}>`
+    height: ${({$expand}) => $expand < 2 ? "400px" : "800px"};
+    overflow: hidden;
+    width: 70%;
+    justify-content: space-evenly;
+    transition: 0.3s;
+`
 
 export const BannerContainer = styled(Container)<{$imageUrl: string}>`
     background: url(${({$imageUrl}) => $imageUrl}) no-repeat;
@@ -134,6 +141,51 @@ export const CloseModal = styled.button`
     background-color: transparent;
     transition: 0.3s;
     cursor: pointer;
+`
+
+export const DescriptionTitle = styled(CloseModal)<{$selected: boolean}>`
+    font-size: 24px;
+    color: ${({$selected}) => $selected ? "black" : "#9F9F9F"};
+`
+
+export const SizeButton = styled(CloseModal)<{$selected: number | undefined, $index: number}>`
+    width: 35px;
+    height: 35px;
+    background-color: ${({$selected, $index}) => $selected == $index ? "#B88E2F" : "#F9F1E7"};
+    color: ${({$selected, $index}) => $selected == $index ? "white" : "black"};
+    border-radius: 5px;
+`
+
+export const ColorButton = styled(SizeButton)<{$color: string}>`
+    background-color: ${({$color}) => $color};
+    border-radius: 50px;
+    border: ${({$selected, $index}) => $selected == $index ? "3px solid #555" : undefined};
+`
+
+export const AddToCartDiv = styled.div<{$width?: number, $color?: string}>`
+    display: flex;
+    width: ${({$width}) => $width}px;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: ${({$color}) => `1px solid ${$color}`};
+`
+
+export const Count = styled(CloseModal) `
+    font-size: 20px;
+
+    &:active {
+        transform: scale(0.6);
+    }
+`
+
+export const AddToCartButton = styled(AddToCartDiv) `
+    cursor: pointer;
+    transition: 0.3s;
+    &:active {
+        transform: scale(0.95);
+    }
 `
 
 export const NewsletterButton = styled(CloseModal)`
@@ -343,6 +395,7 @@ export const ProductImage = styled.img `
 export const ProductThumb = styled(ProductImage)<{$selected?: number, $index?: number}>`
     width: 80px;
     height: 80px;
-    border: ${({$selected, $index}) => $selected == $index ? "1px solid black" : undefined};
+    box-shadow: ${({$selected, $index}) => $selected == $index ? "0px 0px 2px" : undefined};
+    transition: 0.7s;
     cursor: pointer;
 ` 

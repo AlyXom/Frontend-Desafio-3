@@ -26,9 +26,11 @@ export default function VerticalCard({item}: {item: Product}) {
                 <Text className="wg-500" style={{color: "#898989"}}>{item.description}</Text>
 
                 <div className="flex" style={{gap: 30}}>
-                    <Text style={{color: "#3A3A3A", fontSize: 20, fontWeight: 600}}>{`R$${item.price}`}</Text>
-                    {/* {item.discount_price > 0 ? <Text>{`R$${item.discount_price}`}</Text> : undefined} */}
-                    <Text style={{textDecorationLine: "line-through", color: "#B0B0B0"}}>R$ 500</Text>
+                    {item.discount_percent > 0 ? 
+                    <Text style={{color: "#3A3A3A", fontSize: 20, fontWeight: 600}}>{`R$${item.discount_price}`}</Text> : 
+                    <Text style={{color: "#3A3A3A", fontSize: 20, fontWeight: 600}}>{`R$${item.price}`}</Text>}
+                    {item.discount_price > 0 ? 
+                    <Text style={{textDecorationLine: "line-through", color: "#B0B0B0"}}>{`R$${item.price}`}</Text> : undefined}
                 </div>
                 
             </div>
