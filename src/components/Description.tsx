@@ -13,10 +13,10 @@ export default function Description({product}: {product: Product}) {
             </div>
             <Container style={{width: "80%"}}>
                 <div style={{display: selected == 1 ? "block" : "none"}}>
-                    <p>{product.large_description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa accusamus voluptas explicabo, fugiat illum aperiam saepe dignissimos, officia atque repudiandae laborum sed, esse culpa. Inventore architecto enim ipsam similique repellat!</p>
+                    <p style={{color: "#9F9F9F"}}>{product.large_description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa accusamus voluptas explicabo, fugiat illum aperiam saepe dignissimos, officia atque repudiandae laborum sed, esse culpa. Inventore architecto enim ipsam similique repellat!</p>
                 </div>
                 <div style={{display: selected == 2 ? "block" : "none"}}>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa accusamus voluptas explicabo, fugiat illum aperiam saepe dignissimos, officia atque repudiandae laborum sed, esse culpa. Inventore architecto enim ipsam similique repellat! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio facere dolor iste amet unde iusto at harum laudantium, nemo, vel dicta? Odit quos pariatur voluptatum ea perspiciatis quo fugit explicabo.</p>
+                    <p style={{color: "#9F9F9F"}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa accusamus voluptas explicabo, fugiat illum aperiam saepe dignissimos, officia atque repudiandae laborum sed, esse culpa. Inventore architecto enim ipsam similique repellat! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio facere dolor iste amet unde iusto at harum laudantium, nemo, vel dicta? Odit quos pariatur voluptatum ea perspiciatis quo fugit explicabo.</p>
                 </div>
             </Container>
         </Container>

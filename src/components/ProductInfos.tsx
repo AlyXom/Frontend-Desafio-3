@@ -15,7 +15,7 @@ export default function ProductInfos({product, smallImg = []}: {product: Product
     
     const [reviews, setReviews] = useState(() => Math.floor((Math.random() * 10) + 1))
     return (
-        <Container>
+        <Container style={{marginTop: 40}}>
             <Container style={{justifyContent: "flex-start", width: "90%"}}>
                 <ProductImageContainer product={product} smallImg={smallImg}/>
                 <div style={{marginLeft: 100}}>

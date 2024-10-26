@@ -7,6 +7,13 @@ export const Container = styled.div`
     justify-content: center;
 `
 
+export const ExpandedContainer = styled(Container)<{$expand: number}>`
+    height: ${({$expand}) => $expand < 2 ? "400px" : "800px"};
+    overflow: hidden;
+    width: 70%;
+    justify-content: space-evenly;
+    transition: 0.3s;
+`
 
 export const BannerContainer = styled(Container)<{$imageUrl: string}>`
     background: url(${({$imageUrl}) => $imageUrl}) no-repeat;
