@@ -11,10 +11,10 @@ export interface Product {
     is_new: boolean,
     image_link: string,
     other_images_link: string,
-    created_date: string,
-    updated_date: string,
+    created_date?: string,
+    updated_date?: string,
     quantity?: number,
     color?: string,
-    size: string
+    size?: string
 
 }
