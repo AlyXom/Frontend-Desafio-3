@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { HeaderIcons } from "../styles/styledComponents";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../redux/store";
-import Modal from "./Modal";
+import Modal from "./modal/Modal";
 import { switchState } from "../redux/slices/modalState";
 
 export const svgPath = "http://localhost:3000/icons"

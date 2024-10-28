@@ -1,8 +1,8 @@
 import React from "react";
-import { Container } from "../styles/styledComponents";
-import { Product } from "../types/product";
-import "../styles/styles.css"
-import VerticalCard from "./VerticalCard";
+import { Container } from "../../styles/styledComponents";
+import { Product } from "../../types/product";
+import "../../styles/styles.css"
+import VerticalCard from "../modal/VerticalCard";
 
 export default function OurProducts({products}: {products: Product[]}) {
     return (

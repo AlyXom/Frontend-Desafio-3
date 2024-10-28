@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { FilterDropdown, Icons, Input, Text } from "../styles/styledComponents";
-import { svgPath } from "./IconsBar";
+import { FilterDropdown, Icons, Input, Text } from "../../styles/styledComponents";
+import { svgPath } from "../IconsBar";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import "../styles/styles.css"
-import { updateSearch } from "../redux/slices/filterSlice";
-import { myApi } from "../axios.config";
-import { Category } from "../types/category";
+import { RootState } from "../../redux/store";
+import { updateSearch } from "../../redux/slices/filterSlice";
+import { myApi } from "../../axios.config";
+import { Category } from "../../types/category";
+import "../../styles/styles.css"
 
 export default function FilterCategory() {
 

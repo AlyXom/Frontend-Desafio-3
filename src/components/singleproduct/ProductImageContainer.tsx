@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { ProductImage, ProductThumb } from "../styles/styledComponents";
-import { Product } from "../types/product";
+import { ProductImage, ProductThumb } from "../../styles/styledComponents";
+import { Product } from "../../types/product";
 
 export default function ProductImageContainer({product ,smallImg = []}: {product: Product ,smallImg: string[]}) {
     const [selected, setSelected] = useState<number>(0)

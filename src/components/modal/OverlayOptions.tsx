@@ -1,11 +1,11 @@
 import React from "react";
-import { svgPath } from "./IconsBar";
+import { svgPath } from "../IconsBar";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import { addToHeart, deleteToHeart } from "../redux/slices/heartAndCart.slice";
-import { Product } from "../types/product";
-import { ButtonText, Icons, Text } from "../styles/styledComponents";
-import "../styles/styles.css"
+import { RootState } from "../../redux/store";
+import { addToHeart, deleteToHeart } from "../../redux/slices/heartAndCart.slice";
+import { Product } from "../../types/product";
+import { ButtonText, Icons } from "../../styles/styledComponents";
+import "../../styles/styles.css"
 
 export default function OverlayOptions({product}: {product: Product}) {
 

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Container, ExpandedContainer, ShowMoreButton, Title } from "../styles/styledComponents";
-import { Product } from "../types/product";
-import { myApi } from "../axios.config";
-import VerticalCard from "./VerticalCard";
+import { Container, ExpandedContainer, ShowMoreButton, Title } from "../../styles/styledComponents";
+import { Product } from "../../types/product";
+import { myApi } from "../../axios.config";
+import VerticalCard from "../modal/VerticalCard";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import { updateSearch } from "../redux/slices/filterSlice";
+import { RootState } from "../../redux/store";
+import { updateSearch } from "../../redux/slices/filterSlice";
 
 export default function RelatedProducts({product}: {product: Product}) {
+    
     const dispatch = useDispatch()
     const state = useSelector((state: RootState) => state.filterSlice)
     const navigate = useNavigate()

@@ -1,6 +1,6 @@
 import React from "react";
-import { Product } from "../types/product";
-import { Text } from "../styles/styledComponents";
+import { Product } from "../../types/product";
+import { Text } from "../../styles/styledComponents";
 
 export default function ProductPriceInfo({product}: {product: Product}) {
     return (

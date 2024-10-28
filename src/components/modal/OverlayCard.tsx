@@ -1,8 +1,8 @@
 import React from "react";
-import { Overlay, OverlayContainer, SeeMoreButton } from "../styles/styledComponents";
+import { Overlay, OverlayContainer, SeeMoreButton } from "../../styles/styledComponents";
 import { useNavigate } from "react-router-dom";
 import OverlayOptions from "./OverlayOptions";
-import { Product } from "../types/product";
+import { Product } from "../../types/product";
 
 interface product {
     product: Product

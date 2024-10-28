@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Container, DescriptionTitle, Text } from "../styles/styledComponents";
-import { Product } from "../types/product";
-import "../styles/styles.css"
+import { Container, DescriptionTitle, Text } from "../../styles/styledComponents";
+import { Product } from "../../types/product";
+import "../../styles/styles.css"
 
 export default function Description({product}: {product: Product}) {
 

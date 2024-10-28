@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Input, SortDropdown, Text } from "../styles/styledComponents";
-import "../styles/styles.css"
+import React from "react";
+import { Input, SortDropdown, Text } from "../../styles/styledComponents";
+import "../../styles/styles.css"
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import { myApi } from "../axios.config";
-import { updateSearch } from "../redux/slices/filterSlice";
-import { Filtered } from "../types/filteredProduct";
+import { RootState } from "../../redux/store";
+import { updateSearch } from "../../redux/slices/filterSlice";
 
 export default function SortBy() {
     const state = useSelector((state: RootState) => state.filterSlice)

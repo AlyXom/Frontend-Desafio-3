@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Container, Text } from "../styles/styledComponents";
-import { Product } from "../types/product";
-import "../styles/styles.css"
+import { Container, Text } from "../../styles/styledComponents";
+import { Product } from "../../types/product";
 import Stars from "./Stars";
 import ProductImageContainer from "./ProductImageContainer";
 import ProductPriceInfo from "./ProductPriceInfo";
 import SizeContainer from "./SizeContainer";
 import ColorContainer from "./ColorContainer";
-import AddToCart from "./AddToCart";
-import Tags from "./Tags";
+import AddToCart from "../singleproduct/AddToCart";
+import Tags from "../Tags";
 import { useDispatch } from "react-redux";
-import { add } from "../redux/slices/temporaryCart";
+import { add } from "../../redux/slices/temporaryCart";
 import { useParams } from "react-router-dom";
+import "../../styles/styles.css"
 
 export default function ProductInfos({product, smallImg = []}: {product: Product, smallImg: string[]}) {
 

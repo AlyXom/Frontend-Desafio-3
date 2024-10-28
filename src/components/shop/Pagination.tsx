@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react"
-import "../styles/styles.css"
-import { PageButton, SelectedPage } from "../styles/styledComponents"
+import { PageButton, SelectedPage } from "../../styles/styledComponents"
 import { useDispatch, useSelector } from "react-redux"
-import { RootState } from "../redux/store"
-import { updateSearch } from "../redux/slices/filterSlice"
+import { RootState } from "../../redux/store"
+import { updateSearch } from "../../redux/slices/filterSlice"
+import "../../styles/styles.css"
 
 
 

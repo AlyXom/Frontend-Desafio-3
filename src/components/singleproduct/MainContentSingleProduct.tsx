@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ProductNavigation from "./ProductNavigation";
 import { useParams } from "react-router-dom";
-import { myApi } from "../axios.config";
-import { Product } from "../types/product";
+import { myApi } from "../../axios.config";
+import { Product } from "../../types/product";
 import ProductInfos from "./ProductInfos";
 import Description from "./Description";
 import RelatedProducts from "./RelatedProducts";

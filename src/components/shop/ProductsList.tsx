@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { myApi } from "../axios.config";
-import VerticalCard from "./VerticalCard";
-import { Container, Text } from "../styles/styledComponents";
+import { myApi } from "../../axios.config";
+import VerticalCard from "../modal/VerticalCard";
+import { Container, Text } from "../../styles/styledComponents";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import { limit, offset, showing, totalPageIs, updateSearch } from "../redux/slices/filterSlice";
-import { Filtered } from "../types/filteredProduct";
-import { useLocation, useParams } from "react-router-dom";
+import { RootState } from "../../redux/store";
+import { limit, offset, showing, totalPageIs } from "../../redux/slices/filterSlice";
+import { Filtered } from "../../types/filteredProduct";
 
 export default function ProductsList() {
 
@@ -46,7 +45,9 @@ export default function ProductsList() {
     return (
         <div className="flex justifyCenter" style={{width: "100%", marginTop: "3%", marginBottom: "3%"}}>
             <Container className="wrap" style={{width: "80%", gap: 30}}>
-            {products.length <= 0 ? <Text>Nenhum item encontrado</Text> : products.map((item) => <VerticalCard item={item} key={item.id}/>)}
+            {products.length <= 0 ? 
+            <Text>Nenhum item encontrado</Text> : 
+            products.map((item) => <VerticalCard item={item} key={item.id}/>)}
         </Container>
         </div>
     )

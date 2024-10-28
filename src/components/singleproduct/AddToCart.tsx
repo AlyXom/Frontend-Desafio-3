@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { AddToCartButton, AddToCartDiv, Count, Text } from "../styles/styledComponents";
+import { AddToCartButton, AddToCartDiv, Count, Text } from "../../styles/styledComponents";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import { add } from "../redux/slices/temporaryCart";
-import { addToCart } from "../redux/slices/heartAndCart.slice";
-import "../styles/styles.css"
+import { RootState } from "../../redux/store";
+import { add } from "../../redux/slices/temporaryCart";
+import { addToCart } from "../../redux/slices/heartAndCart.slice";
+import "../../styles/styles.css"
 
 export default function AddToCart() {
 

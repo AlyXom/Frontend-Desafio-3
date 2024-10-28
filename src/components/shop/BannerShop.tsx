@@ -1,7 +1,7 @@
 import React from "react";
-import { BannerShopContainer, Icons, Text, Title } from "../styles/styledComponents";
-import "../styles/styles.css"
-import { svgPath } from "./IconsBar";
+import { BannerShopContainer, Icons, Text, Title } from "../../styles/styledComponents";
+import "../../styles/styles.css"
+import { svgPath } from "../IconsBar";
 import { useNavigate } from "react-router-dom";
 const banner = "http://localhost:3001/assets/banner-shop.jpeg"
 

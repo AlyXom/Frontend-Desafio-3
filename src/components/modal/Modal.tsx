@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { Product } from "../types/product";
-import { ModalProps } from "../types/modal";
-import { Card, CloseModal, HorizontalCard, Icons, ModalContainer, ModalOverlay, Price, Text } from "../styles/styledComponents";
+import React, { useState } from "react";
+import { ModalProps } from "../../types/modal";
+import { Card, CloseModal, HorizontalCard, Icons, ModalContainer, ModalOverlay, Price, Text } from "../../styles/styledComponents";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import { switchState } from "../redux/slices/modalState";
-import { svgPath } from "./IconsBar";
-import { deleteToCart, deleteToHeart } from "../redux/slices/heartAndCart.slice";
+import { RootState } from "../../redux/store";
+import { switchState } from "../../redux/slices/modalState";
+import { svgPath } from "../IconsBar";
+import { deleteToCart, deleteToHeart } from "../../redux/slices/heartAndCart.slice";
 import { useNavigate } from "react-router-dom";
-import "../styles/styles.css"
+import "../../styles/styles.css"
 
 export default function Modal({content, isOpen, headerText}:ModalProps) {
 

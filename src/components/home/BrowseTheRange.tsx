@@ -1,11 +1,11 @@
 import React from "react";
-import { CategoryCard, Container, Text } from "../styles/styledComponents";
+import { CategoryCard, Container, Text } from "../../styles/styledComponents";
 import { useNavigate } from "react-router-dom";
-import { Category } from "../types/category";
-import "../styles/styles.css"
+import { Category } from "../../types/category";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import { updateSearch } from "../redux/slices/filterSlice";
+import { RootState } from "../../redux/store";
+import { updateSearch } from "../../redux/slices/filterSlice";
+import "../../styles/styles.css"
 
 export default function BrowseTheRange({categories}: {categories:Category[]}) {
 
