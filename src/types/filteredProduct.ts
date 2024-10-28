@@ -12,5 +12,6 @@ export interface Filtered {
     totalPages?: number,
     categories?: Category[]
     products?: Product[] 
+    offset?: number,
     showing?: number
 }

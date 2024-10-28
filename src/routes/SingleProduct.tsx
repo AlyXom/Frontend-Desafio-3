@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "../components/Header";
-import MainContentSingleProduct from "../components/MainContentSingleProduct";
-import "../styles/styles.css"
+import MainContentSingleProduct from "../components/singleproduct/MainContentSingleProduct";
 import FooterMainContent from "../components/FooterMainContent";
 import { Text } from "../styles/styledComponents";
+import "../styles/styles.css"
 
 export default function SingleProduct() {
     return (

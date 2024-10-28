@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
 import ProductNavigation from "./ProductNavigation";
 import { useParams } from "react-router-dom";
-import { myApi } from "../axios.config";
-import { Product } from "../types/product";
+import { myApi } from "../../axios.config";
+import { Product } from "../../types/product";
 import ProductInfos from "./ProductInfos";
 import Description from "./Description";
 import RelatedProducts from "./RelatedProducts";
 
 export default function MainContentSingleProduct() {
+
     const { id } = useParams()
     const [data, setData] = useState<Product>()
     const [smallImg, setSmallImg] = useState([])
+
     useEffect(() => {
         async function getProduct() {
+            
             const response = await myApi.get(`products/${Number(id)}`)
             if(response) {
                 setData(response.data)
@@ -28,8 +31,6 @@ export default function MainContentSingleProduct() {
             setSmallImg(images)
         }
     }, [data])
-
-    console.log(data)
 
     return (
         <div>
