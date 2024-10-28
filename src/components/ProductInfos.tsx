@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AddToCartButton, AddToCartDiv, Container, Count, Icons, Text } from "../styles/styledComponents";
 import { Product } from "../types/product";
 import "../styles/styles.css"
@@ -10,8 +10,15 @@ import ColorContainer from "./ColorContainer";
 import { svgPath } from "./IconsBar";
 import AddToCart from "./AddToCart";
 import Tags from "./Tags";
+import { useDispatch } from "react-redux";
+import { add } from "../redux/slices/temporaryCart";
 
 export default function ProductInfos({product, smallImg = []}: {product: Product, smallImg: string[]}) {
+
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(add(product))
+    }, [])
     
     const [reviews, setReviews] = useState(() => Math.floor((Math.random() * 10) + 1))
     return (
