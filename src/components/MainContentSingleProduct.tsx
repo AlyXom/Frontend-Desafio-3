@@ -29,6 +29,8 @@ export default function MainContentSingleProduct() {
         }
     }, [data])
 
+    console.log(data)
+
     return (
         <div>
             {data && (

@@ -15,8 +15,11 @@ export default function SizeContainer() {
         if(selected !== undefined) {
             const size = sizes[selected]
             dispatch(add({...state, size: size}))
+            setSelected(undefined)
         }
-    }, [selected])
+    }, [state.size])
+
+    console.log(state)
 
     return (
         <div style={{marginTop: 20}}>

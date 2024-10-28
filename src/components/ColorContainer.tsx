@@ -14,8 +14,9 @@ export default function ColorContainer() {
         if(selected !== undefined) {
             const color = colors[selected]
             dispatch(add({...state, color: color}))
+            setSelected(undefined)
         }
-    }, [selected])
+    }, [state.color])
     return (
         <div style={{marginTop: 20}}>
             <p style={{color: "#9F9F9F"}}>Color</p>

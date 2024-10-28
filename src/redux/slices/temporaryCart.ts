@@ -28,7 +28,9 @@ export const temporaryCart = createSlice({
             return state
         },
 
-        clear: () => initialState
+        clear: () => {
+            return initialState
+        }
     }
 })
 
