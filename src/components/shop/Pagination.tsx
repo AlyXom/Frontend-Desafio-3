@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react"
-import "../styles/styles.css"
-import { PageButton, SelectedPage } from "../styles/styledComponents"
+import { PageButton, SelectedPage } from "../../styles/styledComponents"
 import { useDispatch, useSelector } from "react-redux"
-import { RootState } from "../redux/store"
-import { updateSearch } from "../redux/slices/filterSlice"
+import { RootState } from "../../redux/store"
+import { updateSearch } from "../../redux/slices/filterSlice"
+import "../../styles/styles.css"
 
 
 
 export default function Pagination() {
+    
     const [actualPage, setActualPage] = useState<number>(1)
     const state = useSelector((state: RootState) => state.filterSlice)
     const dispatch = useDispatch()
@@ -46,8 +47,6 @@ export default function Pagination() {
         dispatch(updateSearch({...state, currentPage: item}))
         window.scrollTo(0,0)
     }
-
-    console.log(state.products)
 
     return (
         <div className="flex gap justifyCenter" style={{marginBottom: 80}}>

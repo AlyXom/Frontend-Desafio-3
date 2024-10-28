@@ -1,15 +1,16 @@
 import React, { SyntheticEvent, useEffect, useState } from "react";
 import { Container, NavText, NewsletterButton, NewsletterInput, Text, ValidationText } from "../styles/styledComponents";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 export default function UtilityLinks() {
     const location = useLocation()
     const navigate = useNavigate()
     const [input, setInput] = useState("")
     const [isValid, setIsValid] = useState<boolean | undefined>(undefined)
-    const [msg, setMsg] = useState("E-mail Válido")
+    const [msg, setMsg] = useState("Valid email")
     const [subscribe, setSubscribe] = useState<boolean>(true)
     const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+    const { id } = useParams()
 
     useEffect(() => {
         if(regex.test(input)) {
@@ -18,7 +19,7 @@ export default function UtilityLinks() {
         } else if(input == "") {
             setSubscribe(true)
             setIsValid(undefined)
-            setMsg("E-mail válido")
+            setMsg("Valid email")
         } else {
             setIsValid(false)
         }
@@ -26,7 +27,7 @@ export default function UtilityLinks() {
 
     function submmit(event: SyntheticEvent) {
         event.preventDefault()
-        setMsg("E-mail Cadastrado")
+        setMsg("Registered email")
     }
     return (
         <Container className="flex" style={{justifyContent: "space-between", width: "50%"}}>
@@ -34,7 +35,7 @@ export default function UtilityLinks() {
                 <Text style={{color: "#9F9F9F"}}>Links</Text>
                 <div className="mTop-50p">
                     <NavText onClick={() => {
-                        if(location.pathname == "/shop/" || location.pathname == "/singleproduct") {
+                        if(location.pathname == "/shop" || location.pathname == `/singleproduct/${id}`) {
                             navigate("/")
                             window.scrollTo({top: 0, behavior: "smooth"})
                         }
@@ -63,7 +64,7 @@ export default function UtilityLinks() {
                         <NewsletterButton disabled={subscribe}>SUBSCRIBE</NewsletterButton>
                     </form>
                     {isValid == true ? <ValidationText $color={isValid}>{msg}</ValidationText> : 
-                    isValid == false ? <ValidationText $color={isValid}>E-mail Inválido</ValidationText> : undefined}
+                    isValid == false ? <ValidationText $color={isValid}>Invalid email</ValidationText> : undefined}
                 </div>
             </div>
         </Container>

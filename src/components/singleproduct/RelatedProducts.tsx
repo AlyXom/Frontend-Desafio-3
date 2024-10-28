@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Container, ExpandedContainer, ShowMoreButton, Title } from "../styles/styledComponents";
-import { Product } from "../types/product";
-import { myApi } from "../axios.config";
-import VerticalCard from "./VerticalCard";
+import { Container, ExpandedContainer, ShowMoreButton, Title } from "../../styles/styledComponents";
+import { Product } from "../../types/product";
+import { myApi } from "../../axios.config";
+import VerticalCard from "../modal/VerticalCard";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import { updateSearch } from "../redux/slices/filterSlice";
+import { RootState } from "../../redux/store";
+import { updateSearch } from "../../redux/slices/filterSlice";
 
 export default function RelatedProducts({product}: {product: Product}) {
+    
     const dispatch = useDispatch()
     const state = useSelector((state: RootState) => state.filterSlice)
     const navigate = useNavigate()
@@ -32,13 +33,14 @@ export default function RelatedProducts({product}: {product: Product}) {
             window.scrollTo(0,0)
         }
     }, [open])
+    
     return (
         <Container className="alignCenter" style={{marginTop: 80, flexDirection: "column"}}>
             <Title style={{marginBottom: 50}}>Related Products</Title>
             <ExpandedContainer $expand={open} className="gap wrap">
                 {data.map((item) => {
                     return (
-                        <VerticalCard item={item}/>
+                        <VerticalCard key={item.id} item={item}/>
                     )
                 })}
             </ExpandedContainer>

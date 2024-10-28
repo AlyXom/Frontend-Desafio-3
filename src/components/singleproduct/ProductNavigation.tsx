@@ -1,8 +1,8 @@
 import React from "react";
-import { Container, Icons, Text } from "../styles/styledComponents";
-import "../styles/styles.css"
-import { svgPath } from "./IconsBar";
-import { Product } from "../types/product";
+import { Container, Icons, Text } from "../../styles/styledComponents";
+import { svgPath } from "../IconsBar";
+import { Product } from "../../types/product";
+import "../../styles/styles.css"
 
 export default function ProductNavigation({product}: {product: Product}) {
     return (

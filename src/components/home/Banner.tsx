@@ -1,5 +1,5 @@
 import React from "react";
-import { BannerContainer, PastelCard, Text } from "../styles/styledComponents";
+import { BannerContainer, PastelCard, Text } from "../../styles/styledComponents";
 const banner = "http://localhost:3001/assets/banner.png" 
 
 export default function Banner() {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { svgPath } from "./IconsBar";
+import { svgPath } from "../IconsBar";
 
 const values = [3, 3.5, 4, 4.5, 5]
 export default function Stars() {

@@ -1,9 +1,9 @@
 import React from "react";
-import { Product } from "../types/product";
-import Stamp from "./Stamp";
+import { Product } from "../../types/product"
+import Stamp from "../Stamp";
 import OverlayCard from "./OverlayCard";
-import { Text } from "../styles/styledComponents";
-import "../styles/styles.css"
+import { Text } from "../../styles/styledComponents"
+import "../../styles/styles.css"
 
 export default function VerticalCard({item}: {item: Product}) {
     return (
