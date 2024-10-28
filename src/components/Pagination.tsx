@@ -8,6 +8,7 @@ import { updateSearch } from "../redux/slices/filterSlice"
 
 
 export default function Pagination() {
+    
     const [actualPage, setActualPage] = useState<number>(1)
     const state = useSelector((state: RootState) => state.filterSlice)
     const dispatch = useDispatch()

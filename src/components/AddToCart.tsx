@@ -10,6 +10,7 @@ export default function AddToCart() {
 
     const state = useSelector((state: RootState) => state.temporaryCart)
     const dispatch = useDispatch()
+
     const [count, setCount] = useState(1)
     const [error, setError] = useState<boolean>(false)
 
@@ -31,18 +32,29 @@ export default function AddToCart() {
 
     return (
         <div className="flex" style={{marginTop: 25, gap: 20}}>
+
             <AddToCartDiv $color="#9F9F9F" $width={125}>
                 <Count onClick={() => setCount(count > 1 ? count - 1 : count)}>-</Count>
                 <Text>{count}</Text>
                 <Count onClick={() => setCount(count < 99 ? count + 1 : count)}>+</Count>
             </AddToCartDiv>
+
             <div className="flex flexDColumn">
-                <AddToCartButton onClick={() => addToCartButton()} $color="black" $width={200} style={{justifyContent: "center"}}>
+
+                <AddToCartButton 
+                onClick={() => addToCartButton()}
+                $color="black" $width={200} 
+                style={{justifyContent: "center"}}>
                     <Text style={{cursor: "pointer"}}>Add To Cart</Text>
                 </AddToCartButton>
+
                 {error ? <p style={{color: "red"}}>Choose a color or size.</p> : undefined}
             </div>
-            <AddToCartButton $color="black" $width={200} style={{justifyContent: "center"}}>
+
+            <AddToCartButton
+            $color="black"
+            $width={200}
+            style={{justifyContent: "center"}}>
                 <span style={{fontSize: 20, marginRight: 10}}>+</span>
                 <Text style={{cursor: "pointer"}}>Compare</Text>
             </AddToCartButton>

@@ -8,11 +8,14 @@ import Description from "./Description";
 import RelatedProducts from "./RelatedProducts";
 
 export default function MainContentSingleProduct() {
+
     const { id } = useParams()
     const [data, setData] = useState<Product>()
     const [smallImg, setSmallImg] = useState([])
+
     useEffect(() => {
         async function getProduct() {
+            
             const response = await myApi.get(`products/${Number(id)}`)
             if(response) {
                 setData(response.data)
