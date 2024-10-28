@@ -14,14 +14,13 @@ export default function ColorContainer() {
         if(selected !== undefined) {
             const color = colors[selected]
             dispatch(add({...state, color: color}))
-            setSelected(undefined)
         }
-    }, [state.color])
+    }, [selected])
     return (
         <div style={{marginTop: 20}}>
             <p style={{color: "#9F9F9F"}}>Color</p>
             <span className="flex gap" style={{marginTop: 10}}>
-                {colors.map((item, index) => <ColorButton onClick={() => setSelected(index)} $index={index} $selected={selected} $color={item}></ColorButton>)}
+                {colors.map((item, index) => <ColorButton key={index} onClick={() => setSelected(index)} $index={index} $selected={selected} $color={item}></ColorButton>)}
             </span>
         </div>
     )

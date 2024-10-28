@@ -1,6 +1,6 @@
 import React, { SyntheticEvent, useEffect, useState } from "react";
 import { Container, NavText, NewsletterButton, NewsletterInput, Text, ValidationText } from "../styles/styledComponents";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 export default function UtilityLinks() {
     const location = useLocation()
@@ -10,6 +10,7 @@ export default function UtilityLinks() {
     const [msg, setMsg] = useState("Valid email")
     const [subscribe, setSubscribe] = useState<boolean>(true)
     const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+    const { id } = useParams()
 
     useEffect(() => {
         if(regex.test(input)) {
@@ -34,7 +35,7 @@ export default function UtilityLinks() {
                 <Text style={{color: "#9F9F9F"}}>Links</Text>
                 <div className="mTop-50p">
                     <NavText onClick={() => {
-                        if(location.pathname == "/shop" || location.pathname == "/singleproduct/") {
+                        if(location.pathname == "/shop" || location.pathname == `/singleproduct/${id}`) {
                             navigate("/")
                             window.scrollTo({top: 0, behavior: "smooth"})
                         }

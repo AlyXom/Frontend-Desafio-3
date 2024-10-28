@@ -15,9 +15,8 @@ export default function SizeContainer() {
         if(selected !== undefined) {
             const size = sizes[selected]
             dispatch(add({...state, size: size}))
-            setSelected(undefined)
         }
-    }, [state.size])
+    }, [selected])
 
     console.log(state)
 
@@ -25,7 +24,7 @@ export default function SizeContainer() {
         <div style={{marginTop: 20}}>
             <p style={{color: "#9F9F9F"}}>Size</p>
             <span className="flex gap" style={{marginTop: 10}}>
-                {sizes.map((item, index) => <SizeButton onClick={() => setSelected(index)} $index={index} $selected={selected}>{item}</SizeButton>)}
+                {sizes.map((item, index) => <SizeButton key={index} onClick={() => setSelected(index)} $index={index} $selected={selected}>{item}</SizeButton>)}
             </span>
         </div>
     )

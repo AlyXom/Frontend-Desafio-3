@@ -18,6 +18,7 @@ export default function OverlayCard({product}: product) {
             <Overlay>
                 <SeeMoreButton onClick={() => {
                     navigate(`/singleproduct/${product.id}`)
+                    window.scrollTo(0,0)
                 }}>See More</SeeMoreButton>
                 <OverlayOptions product={product}/>
             </Overlay>

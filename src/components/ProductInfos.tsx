@@ -10,15 +10,21 @@ import ColorContainer from "./ColorContainer";
 import { svgPath } from "./IconsBar";
 import AddToCart from "./AddToCart";
 import Tags from "./Tags";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { add } from "../redux/slices/temporaryCart";
+import { RootState } from "../redux/store";
+import { useParams } from "react-router-dom";
 
 export default function ProductInfos({product, smallImg = []}: {product: Product, smallImg: string[]}) {
 
+    const { id } = useParams()
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(add(product))
-    }, [])
+        if(product) {
+            dispatch(add(product))
+        }
+    }, [id, product])
+    console.log(id)
     
     const [reviews, setReviews] = useState(() => Math.floor((Math.random() * 10) + 1))
     return (

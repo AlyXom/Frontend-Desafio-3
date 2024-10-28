@@ -28,7 +28,6 @@ export default function FilterCategory() {
         getCategories()
     }, [])
 
-
     return (
         <div style={{borderRight:"2px solid grey"}}>
             <div className="flex alignCenter gap">
@@ -50,18 +49,23 @@ export default function FilterCategory() {
                                     <p>New</p>
                                     <input type="checkbox" checked={isCheck.is_new} onChange={() => {
                                         setIsCheck({...isCheck, is_new: !isCheck.is_new})
-                                        dispatch(updateSearch({...state, is_new: !state.is_new}))
+                                        dispatch(updateSearch({...state, is_new: isCheck.is_new ? undefined : !isCheck.is_new}))
                                     }}/>
                                 </div>
                                 <div className="flex gap">
                                     <p>Discount: </p>
-                                    <Input style={{width: 30, textAlign: "center"}} placeholder="10" type="number"/>
+                                    <Input onChange={(e) => {
+                                        const value = Number(e.target.value)
+                                        setIsCheck({...isCheck, discount: value})
+                                        dispatch(updateSearch({...state, discount: value}))
+                                        console.log(state)
+                                    }} style={{width: 30, textAlign: "center"}} placeholder="10" type="number"/>
                                 </div>
                             </div>
                             <Text>Categories:</Text>
                             {categories.map((item) => {
                                 return (
-                                    <div className="flex wrap gap">
+                                    <div key={item.id} className="flex wrap gap">
                                         <p>{item.name}</p>
                                         <input checked={isCheck.category == item.id} type="checkbox" onChange={() => {
                                             if(isCheck.category == state.category) {

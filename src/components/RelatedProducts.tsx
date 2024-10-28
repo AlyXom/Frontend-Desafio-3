@@ -32,13 +32,14 @@ export default function RelatedProducts({product}: {product: Product}) {
             window.scrollTo(0,0)
         }
     }, [open])
+    
     return (
         <Container className="alignCenter" style={{marginTop: 80, flexDirection: "column"}}>
             <Title style={{marginBottom: 50}}>Related Products</Title>
             <ExpandedContainer $expand={open} className="gap wrap">
                 {data.map((item) => {
                     return (
-                        <VerticalCard item={item}/>
+                        <VerticalCard key={item.id} item={item}/>
                     )
                 })}
             </ExpandedContainer>

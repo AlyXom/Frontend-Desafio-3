@@ -9,14 +9,13 @@ import "../styles/styles.css"
 export default function AddToCart() {
 
     const state = useSelector((state: RootState) => state.temporaryCart)
-    const cart = useSelector((state: RootState) => state.heartandcart.cart)
     const dispatch = useDispatch()
     const [count, setCount] = useState(1)
     const [error, setError] = useState<boolean>(false)
 
     useEffect(() => {
         dispatch(add({...state, quantity: count}))
-    }, [count])
+    }, [count, state.color])
 
     function addToCartButton() {
         dispatch(add({...state, quantity: count}))
@@ -27,8 +26,9 @@ export default function AddToCart() {
             dispatch(addToCart(state))
         }
     }
-    console.log(cart)
-    
+
+    console.log(state.id)
+
     return (
         <div className="flex" style={{marginTop: 25, gap: 20}}>
             <AddToCartDiv $color="#9F9F9F" $width={125}>

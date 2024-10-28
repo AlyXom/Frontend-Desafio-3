@@ -47,8 +47,6 @@ export default function Pagination() {
         window.scrollTo(0,0)
     }
 
-    console.log(state.products)
-
     return (
         <div className="flex gap justifyCenter" style={{marginBottom: 80}}>
             <PageButton onClick={() => prevPage()}>Prev</PageButton>

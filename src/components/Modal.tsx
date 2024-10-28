@@ -55,7 +55,7 @@ export default function Modal({content, isOpen, headerText}:ModalProps) {
                                             </div>
                                             <Text style={{fontSize: 14}}>Size: {item.size}</Text>
                                         </div> : undefined}
-                                        <Price>{`R$ ${item.price}`}</Price>
+                                        {item.discount_percent > 0 ? <Price>{`R$ ${item.discount_price}`}</Price> : <Price>{`R$ ${item.price}`}</Price>}
                                     </div>
                                     {state.heart == true ? 
                                     <Icons onClick={() => dispatch(deleteToHeart(item.id))} src={`${svgPath}/trash.svg`} alt="" $height={23} $width={23}/> : 
